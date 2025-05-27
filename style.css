@@ -1,0 +1,632 @@
+/* Melhorando o CSS mantendo a estrutura original */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garantindo que padding e border sejam incluídos na largura/altura */
+}
+
+/* Variáveis para facilitar a manutenção */
+:root {
+    --primary-color: #e05e44;
+    --bg-light: #ffece8;
+    --white: #ffffff;
+    --text-color: #333333;
+}
+
+body {
+    background-color: white;
+    padding-top: 60px;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+header > h1 { 
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    padding-top: 5px;
+    font-size: clamp(1.2rem, 4vw, 1.6rem); /* Tamanho de fonte responsivo */
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Great Vibes', cursive;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 7px;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    border: solid white 1px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+header img {
+    height: auto;
+    object-fit: cover;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ================= CONTEÚDO PRINCIPAL ================= */
+.conteiner-1 {
+    background-color: var(--bg-light);
+    width: 100%;
+    height: auto;
+    padding: 3rem 5%;
+}
+
+.conteiner-1 .content-1 {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner-1 .image-conteiner-1 {
+    flex: 1 1 300px;
+    max-width: 400px;
+    min-width: 280px;
+}
+
+.conteiner-1 .image-conteiner-1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.text-conteiner-1 {
+    flex: 1 1 300px;
+    max-width: 500px;
+    text-align: justify;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.2;
+}
+
+.text-conteiner-1 h3, 
+.text-conteiner-1 h4 {
+    margin-bottom: 15px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.text-conteiner-1 p {
+    margin-bottom: 20px;
+}
+
+.text-conteiner-1 ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+span {
+    color: var(--primary-color);
+}
+
+/* ================= OCASIÕES ================= */
+.pagina-ocasiões {
+    background-color: white;
+    height: auto;
+    width: 100%;
+    padding: 3rem 5%;
+}
+
+.content-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pagina-ocasiões h2 {
+    text-align: center;
+    padding: 0 0 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.card-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    margin: 0;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.card-2:hover {
+    transform: translateY(-5px);
+}
+
+.card-2 picture {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-2:hover img {
+    transform: scale(1.05);
+}
+
+.card-content-2 {
+    padding: 15px;
+    width: 100%;
+}
+
+.card-content-2 h3 {
+    padding-top: 0;
+    margin-bottom: 15px;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+}
+
+.card-content-2 p {
+    line-height: 1.5;
+    text-align: justify;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* ================= CARDÁPIO ================= */
+.pagina-cardapio {
+    background-color: var(--bg-light);
+    width: 100%;
+    height: auto;
+    padding: 3rem 5%;
+}
+
+.pagina-cardapio h2 {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.layout-cardapio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-lateral {
+    flex: 1 1 200px;
+    max-width: 200px;
+    min-width: 180px;
+}
+
+.menu-lateral nav {
+    position: sticky;
+    top: 80px;
+}
+
+.menu-lateral button {
+    background: none;
+    border: none;
+    padding: 12px 15px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--primary-color);
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.menu-lateral button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.content-3 {
+    flex: 1 1 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.card-3 {
+    flex: 0 1 calc(33.333% - 20px);
+    min-width: 170px;
+    max-width: 220px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.card-3:hover {
+    transform: translateY(-5px);
+}
+
+.card-3 img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content-3 {
+    padding: 12px;
+    width: 100%;
+}
+
+.card-content-3 h4 {
+    margin-bottom: 8px;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+} 
+
+.card-content-3 p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    width: 100%;
+    padding: 3rem 5% 2rem;
+    background-color: white;
+}
+
+footer h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+footer .conteiner-footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form {
+    flex: 1 1 300px;
+}
+
+.form form {
+    max-width: 500px;
+}
+
+.form p {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #c04e36;
+}
+
+.info {
+    flex: 1 1 300px;
+    padding-left: 20px;
+}
+
+.info h4 {
+    margin-bottom: 15px;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.info p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.info a:hover {
+    color: #c04e36;
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Tablets e telas médias (768px - 991px) */
+@media screen and (max-width: 991px) {
+    body {
+        padding-top: 70px;
+    }
+
+    header {
+        padding: 10px 3%;
+    }
+    
+    header > h1 {
+        margin-left: 0;
+    }
+    
+    header nav {
+        margin-right: 0;
+    }
+    
+    .conteiner-1 .content-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text-conteiner-1,
+    .conteiner-1 .image-conteiner-1 {
+        width: 100%;
+        max-width: 500px;
+    }
+    
+    .card-2 {
+        max-width: 300px;
+    }
+    
+    .layout-cardapio {
+        flex-direction: column;
+    }
+    
+    .menu-lateral {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .menu-lateral form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .menu-lateral button {
+        flex: 0 1 auto;
+        width: auto;
+    }
+    
+    .content-3 {
+        justify-content: center;
+    }
+    
+    .card-3 {
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+/* Smartphones em landscape (576px - 767px) */
+@media screen and (max-width: 767px) {
+    body {
+        padding-top: 120px;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    
+    header > h1 {
+        margin-bottom: 10px;
+    }
+    
+    header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    header a {
+        padding: 6px;
+        font-size: 0.85rem;
+    }
+    
+    header a i {
+        font-size: 0.95rem;
+    }
+    
+    .conteiner-1,
+    .pagina-ocasiões,
+    .pagina-cardapio,
+    footer {
+        padding: 2rem 15px;
+    }
+    
+    .card-3 {
+        flex: 0 1 calc(100% - 20px);
+        max-width: 300px;
+    }
+    
+    footer .conteiner-footer-info {
+        flex-direction: column;
+    }
+    
+    .info {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+/* Smartphones em portrait (até 575px) */
+@media screen and (max-width: 575px) {
+    body {
+        padding-top: 140px;
+    }
+    
+    header a {
+        font-size: 0.8rem;
+    }
+    
+    .pagina-ocasiões h2,
+    .pagina-cardapio h2,
+    footer h2 {
+        font-size: 1.8rem;
+    }
+    
+    .text-conteiner-1 h3,
+    .text-conteiner-1 h4 {
+        font-size: 1.5rem;
+    }
+    
+    .card-content-2 h3 {
+        font-size: 1.4rem;
+    }
+    
+    .card-content-3 h4 {
+        font-size: 1.2rem;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        font-size: 0.9rem;
+    }
+}
+
+/* TVs e telas grandes (acima de 1200px) */
+@media screen and (min-width: 1200px) {
+    .conteiner-1 .content-1,
+    .content-2,
+    .layout-cardapio,
+    footer .conteiner-footer-info {
+        max-width: 1400px;
+    }
+    
+    .content-3 {
+        gap: 30px;
+    }
+    
+    .card-3 {
+        max-width: 230px;
+    }
+    
+    header > h1 {
+        font-size: 1.8rem;
+    }
+    
+    header a {
+        font-size: 1.1rem;
+    }
+}
+
+/* TVs muito grandes (acima de 1600px) */
+@media screen and (min-width: 1600px) {
+    body {
+        font-size: 18px;
+    }
+    
+    .conteiner-1 .content-1,
+    .content-2,
+    .layout-cardapio,
+    footer .conteiner-footer-info {
+        max-width: 1600px;
+    }
+    
+    .card-3 {
+        max-width: 260px;
+    }
+    
+    header > h1 {
+        font-size: 2rem;
+    }
+    
+    header a {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-item img {
+        max-height: 600px;
+        object-fit: cover;
+    }
+}
