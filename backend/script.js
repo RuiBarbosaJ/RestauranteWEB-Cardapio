@@ -297,8 +297,34 @@ BTN_ENVIAR.addEventListener("click", function (e) {
 });
 
 function validarInputs() {
-  const nomeClient = NOME_INPUT.value;
+  const nomeClient = NOME_INPUT.value.trim();
   const emailClient = EMAIL_INPUT.value.trim();
   const telefoneClient = TELEFONE_INPUT.value.trim();
-  const mensagemClient = MENSAGEM_INPUT.value;
+  const mensagemClient = MENSAGEM_INPUT.value.trim();
+
+  // Regex para validação
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const telefoneRegex = /^\(?\d{2}\)?\s?\d{4,5}-\d{4}$/;
+
+  if (nomeClient.length < 3) {
+    alert("Nome deve ter pelo menos 3 caracteres");
+    return false;
+  }
+
+  if (!emailRegex.test(emailClient)) {
+    alert("Digite um e-mail válido.");
+    return false;
+  }
+
+  if (!telefoneRegex.test(telefoneClient)) {
+    alert("Digite um telefone no formato certo");
+    return false;
+  }
+
+  if (mensagemClient.length < 5) {
+    alert("Mensagem deve ter pelo menos 5 caracteres");
+    return false;
+  }
+
+  return true;
 }
